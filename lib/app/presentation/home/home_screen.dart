@@ -21,7 +21,19 @@ class HomeScreen extends GetView<HomeController> {
               ),
               OutlinedButton(child: Text("aumentar"),onPressed: (){
                 controller.addCount();
-              },)
+              },),
+
+              Obx(
+                    () => Expanded(
+                      child: ListView.builder
+                        (
+                          itemCount: controller.httCatList.length,
+                          itemBuilder: (BuildContext ctxt, int Index) {
+                            return new Text(controller.httCatList[Index].statusCode);
+                          }
+                      ),
+                    )
+              ),
             ],
           ),
         ),
