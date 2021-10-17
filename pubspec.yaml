@@ -40,6 +40,10 @@ dependencies:
   # Value equality
   equatable: ^2.0.3
 
+  # Handle with files
+  path_provider: ^2.0.4
+
+
 
 dev_dependencies:
   flutter_test:

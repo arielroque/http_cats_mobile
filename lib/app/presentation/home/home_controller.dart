@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_clean_architecture/app/core/errors/failure.dart';
 import 'package:flutter_clean_architecture/app/core/usercases/usercase.dart';
 import 'package:flutter_clean_architecture/app/data/repositories/api_repo_iml.dart';
@@ -12,9 +13,16 @@ class HomeController extends GetxController {
       new GetRemoteHttpCats(new ApiRepoImpl());
   final GetRemoteHttpCat getRemoteHttpCat =
       new GetRemoteHttpCat(new ApiRepoImpl());
+
+  final searchController = new TextEditingController();
+
   var count = 0.obs;
-  RxList<HttpCat> httCatList = new RxList<HttpCat>();
+
+  List<HttpCat> httpCatListCache = [];
+  RxList<HttpCat> httpCatList = new RxList<HttpCat>();
+  RxString filter = "".obs;
   RxBool isLoading = true.obs;
+  RxBool isSearching = false.obs;
 
   HomeController() {
     loadData();
@@ -27,18 +35,39 @@ class HomeController extends GetxController {
 
   void _handleFetchResult(Either<Failure, List<HttpCat>> result) {
     result.fold((feilure) {
-      httCatList.clear();
+      httpCatListCache.clear();
       Get.snackbar('Refresh failed!', "Can't load articles",
           snackPosition: SnackPosition.BOTTOM);
     }, (data) {
-      httCatList.value = data;
-      //_setState(ViewState.data);
+      httpCatListCache = data;
       this.isLoading.value = false;
       Get.snackbar('Refresh successfuly!',
-          ' ${httCatList.length} new articles ready for reading',
+          ' ${httpCatListCache.length} new articles ready for reading',
           snackPosition: SnackPosition.BOTTOM);
+      httpCatList.value = data.toList();
     });
   }
 
-  void addCount() {}
+  void toggleSearchBar() {
+    if (isSearching.isTrue) {
+      this.isSearching.value = false;
+      this.httpCatList.value = httpCatListCache.toList();
+      return;
+    }
+    this.isSearching.value = true;
+  }
+
+  void onSearch(String s) {
+    this.httpCatList.clear();
+
+    if(s.isEmpty){
+      this.httpCatList.value = httpCatListCache.toList();
+      return;
+    }
+
+    final cats = httpCatListCache.where((i) => i.statusCode.contains(s)).toList();
+    for(HttpCat i in cats) {
+      this.httpCatList.add(i);
+    }
+  }
 }
