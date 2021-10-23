@@ -43,6 +43,12 @@ dependencies:
   # Handle with files
   path_provider: ^2.0.4
 
+  # Cached network image
+  cached_network_image: ^3.1.0
+
+  # Web View
+  webview_flutter: ^2.0.12
+
 
 
 dev_dependencies:

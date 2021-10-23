@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/app/core/utils/constants.dart';
-import 'package:flutter_clean_architecture/app/core/widgets/search_bar.dart';
+import 'package:flutter_clean_architecture/app/core/widgets/search_bar/search_bar.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/home_controller.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/widgets/image_card.dart';
 import 'package:get/get.dart';
@@ -39,13 +39,14 @@ class HomeScreen extends GetView<HomeController> {
             Obx(() => Visibility(
               child: Expanded(
                 child: ListView.builder(
+                    //cacheExtent: 9999,
                     addAutomaticKeepAlives: true,
                     itemCount: controller.httpCatList.length,
                     itemBuilder: (BuildContext ctxt, int index) {
                       return ImageContent(
                           statusCode:
                               controller.httpCatList[index].statusCode,
-                          imageContent: controller.httpCatList[index].image,
+                          imageUrl: controller.httpCatList[index].image,
                           action: () {});
                     }),
               ),visible: controller.httpCatList.isNotEmpty,
