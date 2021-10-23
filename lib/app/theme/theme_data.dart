@@ -4,6 +4,7 @@ ThemeData themeData = ThemeData(
   primaryColor: Color(0xFFD0383E),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(color: Colors.red),
+  fontFamily: "Nunito",
   textTheme: TextTheme(
     headline:
     TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
