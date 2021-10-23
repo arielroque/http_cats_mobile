@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 
 class LabelMessage extends StatelessWidget {
 
@@ -18,7 +19,7 @@ class LabelMessage extends StatelessWidget {
         children: [
           Image.asset(imageAssetPath,height: height*0.4,),
           SizedBox(height: 30,),
-          Text(message,style: TextStyle(fontSize: 20),)
+          Text(message,style: TextStyle(fontSize: FontSize.FONT_SIZE_MEDIUM),)
         ],
       ),
     );

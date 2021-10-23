@@ -5,6 +5,7 @@ import 'package:flutter_clean_architecture/app/core/widgets/search_bar/search_ba
 import 'package:flutter_clean_architecture/app/core/widgets/spinner/spinner.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/home_controller.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/widgets/image_card.dart';
+import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -18,7 +19,7 @@ class HomeScreen extends GetView<HomeController> {
                 hint: "Search...",
                 keyboardType: TextInputType.number,
               )
-            : Text(Constants.APP_NAME)),
+            : Text(Constants.APP_NAME,style: TextStyle(fontSize: FontSize.FONT_SIZE_APP_BAR),)),
         actions: [
           Obx(() => IconButton(
               onPressed: () {

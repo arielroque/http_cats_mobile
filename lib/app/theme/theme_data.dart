@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/app/theme/color_theme.dart';
+import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 
 ThemeData themeData = ThemeData(
-  primaryColor: Color(0xFFD0383E),
+  primaryColor: ColorTheme.PRIMARY_COLOR,
   scaffoldBackgroundColor: Colors.white,
-  appBarTheme: AppBarTheme(color: Colors.red),
+  appBarTheme: AppBarTheme(color: ColorTheme.PRIMARY_COLOR),
   fontFamily: "Nunito",
   textTheme: TextTheme(
     headline:
     TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
     button: TextStyle(
-        color: Colors.white, fontWeight: FontWeight.w600, fontSize: 15),
-  ),
-  buttonTheme: ButtonThemeData(
-    buttonColor: Colors.amberAccent,
-    textTheme: ButtonTextTheme.primary,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
-    ),
+        color: Colors.white, fontWeight: FontWeight.w600, fontSize: FontSize.FONT_SIZE_REGULAR),
   ),
   inputDecorationTheme: InputDecorationTheme(
     contentPadding: EdgeInsets.all(8),

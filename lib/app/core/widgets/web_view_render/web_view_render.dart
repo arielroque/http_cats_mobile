@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewRender extends StatefulWidget {
@@ -26,7 +27,7 @@ class WebViewRenderState extends State<WebViewRender> {
       appBar: AppBar(
         title: Text(
           "See More",
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: FontSize.FONT_SIZE_APP_BAR),
         ),
         elevation: 0,
       ),
