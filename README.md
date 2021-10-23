@@ -1,16 +1,24 @@
-# flutter_clean_architecture
+# http.cats mobile
 
-A new Flutter project.
+## :notebook: Overview
 
-## Getting Started
+## :pushpin: Goals  
+> - Facilitate rapid development of mobile solutions in Flutter    
+> - Standardize the development of your applications following the Clean Architecture Standard
+> - Include minimal libraries to start your new app
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## :bookmark: Requirements
+- [Flutter](https://flutter.dev/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## :camera: Screenshots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## :building_construction: Flutter Clean Architecture
+
+## :triangular_flag_on_post: Running App
+
+##  :microscope: Tests
+
+
+## :clap: Thanks 
+
