@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 class ColorTheme{
   static const Color PRIMARY_COLOR = Color(0xFFD0383E);
   static const Color WHITE = Color(0XFFFFFFFF);
