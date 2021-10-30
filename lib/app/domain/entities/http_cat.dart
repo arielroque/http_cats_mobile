@@ -1,7 +1,3 @@
-
-
-import 'dart:io';
-
 class HttpCat {
   String statusCode;
   String image;

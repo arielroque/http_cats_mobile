@@ -6,7 +6,8 @@ class Spinner extends StatelessWidget {
   final String message;
   final double size;
 
-  const Spinner({this.message = "",this.size=40});
+  const Spinner({Key? key,this.message = "", this.size = 40})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +15,19 @@ class Spinner extends StatelessWidget {
       children: [
         SizedBox(
           width: size,
-          height: size ,
+          height: size,
           child: CircularProgressIndicator(
             color: Colors.redAccent,
           ),
         ),
-        SizedBox(height: 15,),
-        Visibility(visible: message.isNotEmpty, child: Text(this.message,style: TextStyle(fontSize: FontSize.FONT_SIZE_REGULAR),))
+        SizedBox(
+          height: 15,
+        ),
+        Visibility(
+            visible: message.isNotEmpty,
+            child: Text(this.message,
+                style: TextStyle(fontSize: FontSize.FONT_SIZE_REGULAR),
+                textDirection: TextDirection.ltr))
       ],
     );
   }
