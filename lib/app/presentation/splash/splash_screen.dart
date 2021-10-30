@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/app/core/widgets/spinner/spinner.dart';
 import 'package:flutter_clean_architecture/app/presentation/splash/splash_controller.dart';
+import 'package:flutter_clean_architecture/app/theme/color_theme.dart';
+import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends GetView<SplashController> {
+class SplashScreen extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: ColorTheme.PRIMARY_COLOR,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -18,10 +21,10 @@ class HomeScreen extends GetView<SplashController> {
                 color: Colors.black,
               )).paddingOnly(top: Get.mediaQuery.size.height * 0.4),
           const Spacer(),
-          const Text(
-            'Loading...',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ).paddingOnly(bottom: 20.0)
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Spinner(message: "Loading...",color: ColorTheme.WHITE,messageColor: ColorTheme.WHITE,messageSize: FontSize.FONT_SIZE_MEDIUM,),
+          )
         ],
       ),
     );

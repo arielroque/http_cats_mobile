@@ -10,7 +10,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     defaultTransition: Transition.topLevel,
     title: "Flutter Clean Architecture",
-    initialRoute: Routes.HOME,
+    initialRoute: Routes.SPLASH,
     getPages: Navigation.routes,
     theme: themeData,
   ),);
