@@ -4,6 +4,8 @@
 
 ## :notebook: Overview
 
+This project has the main objective of building a flutter application that uses a clean flutter architecture and could serve as a template for building new applications. For the application of this project we used the [http.cats](https://http.cat/) website as a basis to create a mobile version with Flutter.
+
 ## :pushpin: Goals  
 > - Facilitate rapid development of mobile solutions in Flutter    
 > - Standardize the development of your applications following the Clean Architecture Standard
