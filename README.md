@@ -19,8 +19,37 @@
 
 ## :triangular_flag_on_post: Running App
 
+```bash
+#Clone the project
+git clone https://github.com/arielroque/http_cats_mobile.git
+
+#Enter in the folder 
+cd http_cats_mobile
+
+#Get the packages
+flutter packages get
+
+#Running the app in your device ou emulator
+flutter run
+```
+
 ##  :microscope: Tests
 
+```bash
+#Run tests
+flutter run test
+```
+
+## Todos
+
+- [x]
 
 ## :clap: Thanks 
+ - Thnaks to [@flutterando](https://github.com/Flutterando/Clean-Dart) for the material created about clean architecture
+ - Thanks to [@http.cat](https://github.com/httpcats) for make available the api that allows to obtain the information
+ - Thanks to [@girliemac](https://github.com/girliemac) for creating the beautiful http status cats images
+ - Thanks to [@nataly-enne](https://github.com/nataly-enne) for the status 501 image
+ - Thanks to [@woutfeys](https://github.com/woutfeys) for the status 102 image
+ - Thanks to [@epitaciosilva](https://github.com/epitaciosilva) for the 407 image
+ - Thanks to [@luizcieslak](https://github.com/luizcieslak) for the 203 image and 407 image fix.
 
