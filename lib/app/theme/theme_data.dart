@@ -4,6 +4,7 @@ import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 
 ThemeData themeData = ThemeData(
   primaryColor: ColorTheme.PRIMARY_COLOR,
+  accentColor: ColorTheme.PRIMARY_COLOR,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(color: ColorTheme.PRIMARY_COLOR),
   fontFamily: "Nunito",

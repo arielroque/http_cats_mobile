@@ -5,6 +5,7 @@ import 'package:flutter_clean_architecture/app/core/widgets/search_bar/search_ba
 import 'package:flutter_clean_architecture/app/core/widgets/spinner/spinner.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/home_controller.dart';
 import 'package:flutter_clean_architecture/app/presentation/home/widgets/image_card.dart';
+import 'package:flutter_clean_architecture/app/theme/color_theme.dart';
 import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 import 'package:get/get.dart';
 
@@ -30,11 +31,13 @@ class HomeScreen extends GetView<HomeController> {
                   : Icon(Icons.search)))
         ],
       ),
-      body: Center(
-        child: Column(
+      body: RefreshIndicator(
+        color: ColorTheme.PRIMARY_COLOR,
+        onRefresh: controller.loadData,
+        child: Stack(
           children: [
             Obx(() => Visibility(
-                  child: Expanded(
+                  child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -42,32 +45,36 @@ class HomeScreen extends GetView<HomeController> {
                       ],
                     ),
                   ),
-                  visible: controller.isLoading.isTrue,
+                  visible: controller.isLoading.isTrue && !controller.haveConnectionError.value,
                 )),
             Obx(() => Visibility(
                   child: LabelMessage(
                     imageAssetPath: "assets/images/not_found.png",
-                    message: "Code not found",
+                    message: "    Connection error\nSwipe up to try again",
                   ),
-                  visible: controller.isSearching.value &&
-                      controller.httpCatList.isEmpty,
+                  visible: controller.haveConnectionError.value,
                 )),
+
             Obx(() => Visibility(
-                  child: Expanded(
-                    child: ListView.builder(
-                        //cacheExtent: 9999,
-                        addAutomaticKeepAlives: true,
-                        itemCount: controller.httpCatList.length,
-                        itemBuilder: (BuildContext ctxt, int index) {
-                          return ImageContent(
-                              statusCode:
-                                  controller.httpCatList[index].statusCode,
-                              imageUrl: controller.httpCatList[index].image,
-                              action: () {});
-                        }),
-                  ),
-                  visible: controller.httpCatList.isNotEmpty,
-                )),
+              child: LabelMessage(
+                imageAssetPath: "assets/images/not_found.png",
+                message: "Code not found",
+              ),
+              visible: controller.isSearching.value &&
+                  controller.httpCatList.isEmpty && !controller.haveConnectionError.value,
+            )),
+            Obx(() => ListView.builder(
+                //cacheExtent: 9999,
+                physics: AlwaysScrollableScrollPhysics(),
+                addAutomaticKeepAlives: true,
+                itemCount: controller.httpCatList.length,
+                itemBuilder: (BuildContext ctxt, int index) {
+                  return ImageContent(
+                      statusCode:
+                          controller.httpCatList[index].statusCode,
+                      imageUrl: controller.httpCatList[index].image,
+                      action: () {});
+                })),
           ],
         ),
       ),

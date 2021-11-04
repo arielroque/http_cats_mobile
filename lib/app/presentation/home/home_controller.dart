@@ -23,28 +23,29 @@ class HomeController extends GetxController {
   RxString filter = "".obs;
   RxBool isLoading = true.obs;
   RxBool isSearching = false.obs;
+  RxBool haveConnectionError = false.obs;
 
   HomeController() {
     loadData();
   }
 
-  void loadData() async {
+  Future<void> loadData() async {
     final result = await getRemoteHttpCats.call(NoParams());
     _handleFetchResult(result);
   }
 
   void _handleFetchResult(Either<Failure, List<HttpCat>> result) {
     result.fold((feilure) {
-      httpCatListCache.clear();
+      this.httpCatListCache.clear();
       Get.snackbar('Refresh failed!', "Can't load articles",
           snackPosition: SnackPosition.BOTTOM);
+
+      this.haveConnectionError.value = true;
     }, (data) {
-      httpCatListCache = data;
+      this.httpCatListCache = data;
       this.isLoading.value = false;
-      Get.snackbar('Refresh successfuly!',
-          ' ${httpCatListCache.length} new articles ready for reading',
-          snackPosition: SnackPosition.BOTTOM);
-      httpCatList.value = data.toList();
+      this.haveConnectionError.value = false;
+      this.httpCatList.value = data.toList();
     });
   }
 
@@ -60,13 +61,14 @@ class HomeController extends GetxController {
   void onSearch(String s) {
     this.httpCatList.clear();
 
-    if(s.isEmpty){
+    if (s.isEmpty) {
       this.httpCatList.value = httpCatListCache.toList();
       return;
     }
 
-    final cats = httpCatListCache.where((i) => i.statusCode.contains(s)).toList();
-    for(HttpCat i in cats) {
+    final cats =
+        httpCatListCache.where((i) => i.statusCode.contains(s)).toList();
+    for (HttpCat i in cats) {
       this.httpCatList.add(i);
     }
   }

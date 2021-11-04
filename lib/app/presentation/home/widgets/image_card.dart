@@ -1,8 +1,8 @@
-import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/app/core/utils/constants.dart';
+import 'package:flutter_clean_architecture/app/core/widgets/spinner/spinner.dart';
 import 'package:flutter_clean_architecture/app/core/widgets/web_view_render/web_view_render.dart';
 import 'package:flutter_clean_architecture/app/theme/color_theme.dart';
 import 'package:flutter_clean_architecture/app/theme/font_size.dart';
@@ -70,7 +70,7 @@ class ImageContent extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.0),
                 child: CachedNetworkImage(
                   imageUrl: imageUrl,
-                  placeholder: (context, url) => CircularProgressIndicator(),
+                  placeholder: (context, url) => Spinner(),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               ),
