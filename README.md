@@ -4,7 +4,9 @@
 
 ## :notebook: Overview
 
-This project has the main objective of building a flutter application that uses a clean flutter architecture and could serve as a template for building new applications. For the application of this project we used the [http.cats](https://http.cat/) website as a basis to create a mobile version with Flutter.
+This project has the main objective of building a flutter application that uses a flutter clean  architecture and could serve as a template for building new applications. For the application of this project we used the [http.cats](https://http.cat/) website as a basis to create a mobile version with Flutter.
+
+You can see more about Flutter clean architecture: [ResoCoder](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course) and [Flutterando](https://github.com/Flutterando/Clean-Dart)
 
 ## :pushpin: Goals  
 > - Facilitate rapid development of mobile solutions in Flutter    
@@ -17,7 +19,11 @@ This project has the main objective of building a flutter application that uses 
 
 ## :camera: Screenshots
 
-## :building_construction: Flutter Clean Architecture
+<p align="left">
+<img width="280" src="https://user-images.githubusercontent.com/17733053/140522409-fb666e3a-f81b-44af-ba25-85e187ce1592.jpg" />
+<img width="280" src="https://user-images.githubusercontent.com/17733053/140522480-9e3fd5da-3965-40ee-b1c3-8c3fb7c0048d.jpg" />
+<img width="280" src="https://user-images.githubusercontent.com/17733053/140524658-7ad00d99-7599-41b5-a83b-e171187e21f6.jpg" />
+</>
 
 ## :triangular_flag_on_post: Running App
 
@@ -42,13 +48,14 @@ flutter run
 flutter run test
 ```
 
-## Todos
+## :pencil: Todos
 
-- [x]
+- [ ] Add tests to all widgets
+- [ ] Add getx in web view render widget
 
 ## :clap: Thanks 
- - Thnaks to [@flutterando](https://github.com/Flutterando/Clean-Dart) for the material created about clean architecture
- - Thanks to [@http.cat](https://github.com/httpcats) for make available the api that allows to obtain the information
+ - Thanks to [httpstatuses.com](http://httpstatuses.com) for informations about each http code
+ - Thanks to [@http.cat](https://github.com/httpcats) for make available the api that allows to obtain the cats images
  - Thanks to [@girliemac](https://github.com/girliemac) for creating the beautiful http status cats images
  - Thanks to [@nataly-enne](https://github.com/nataly-enne) for the status 501 image
  - Thanks to [@woutfeys](https://github.com/woutfeys) for the status 102 image
