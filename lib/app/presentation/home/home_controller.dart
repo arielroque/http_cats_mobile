@@ -37,7 +37,7 @@ class HomeController extends GetxController {
   void _handleFetchResult(Either<Failure, List<HttpCat>> result) {
     result.fold((feilure) {
       this.httpCatListCache.clear();
-      Get.snackbar('Refresh failed!', "Can't load articles",
+      Get.snackbar('Refresh failed!', "Can't load http code",
           snackPosition: SnackPosition.BOTTOM);
 
       this.haveConnectionError.value = true;

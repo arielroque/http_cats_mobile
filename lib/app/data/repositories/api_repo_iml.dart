@@ -11,9 +11,7 @@ import 'package:flutter_clean_architecture/app/data/repositories/api_repo.dart';
 class ApiRepoImpl implements ApiRepo {
   HttpClientImpl _httpClientImpl =  new HttpClientImpl();
 
-  ApiRepoImpl() {
-   // _httpClientImpl = new HttpClientImpl();
-  }
+  ApiRepoImpl() {}
 
   @override
   Future<Either<Failure, HttpCat>> getHttpCat(String statusCode) async {
@@ -40,7 +38,6 @@ class ApiRepoImpl implements ApiRepo {
 
       return Right(httpCats);
     } on Exception catch (e) {
-      print("oiii");
       print(e.toString());
       return const Left(Failure('Something went wrong'));
     }
