@@ -16,12 +16,14 @@ class LabelMessage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: Column(
-          children: [
-            Image.asset(imageAssetPath,height: height*0.4,),
-            SizedBox(height: 30,),
-            Text(message,style: TextStyle(fontSize: FontSize.FONT_SIZE_MEDIUM),)
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(imageAssetPath,height: height*0.4,),
+              SizedBox(height: 30,),
+              Text(message,style: TextStyle(fontSize: FontSize.FONT_SIZE_MEDIUM),)
+            ],
+          ),
         ),
       ),
     );

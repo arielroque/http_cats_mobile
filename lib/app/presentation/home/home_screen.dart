@@ -49,7 +49,7 @@ class HomeScreen extends GetView<HomeController> {
                 )),
             Obx(() => Visibility(
                   child: LabelMessage(
-                    imageAssetPath: "assets/images/not_found.png",
+                    imageAssetPath: "assets/images/offline.png",
                     message: "    Connection error\nSwipe up to try again",
                   ),
                   visible: controller.haveConnectionError.value,
