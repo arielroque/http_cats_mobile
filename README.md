@@ -8,6 +8,8 @@ This project has the main objective of building a Flutter application that uses 
 
 You can see more about Flutter clean Architecture: [ResoCoder](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course) and [Flutterando](https://github.com/Flutterando/Clean-Dart)
 
+You can see more about GetX: [GetX - Flutter package](https://pub.dev/packages/get)
+
 ## :pushpin: Goals  
 > - Facilitate rapid development of mobile solutions in Flutter    
 > - Standardize the development of your applications following the Clean Architecture Standard
