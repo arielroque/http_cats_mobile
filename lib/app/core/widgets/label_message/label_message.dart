@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_clean_architecture/app/theme/font_size.dart';
 
 class LabelMessage extends StatelessWidget {
-
   final String imageAssetPath;
   final String message;
-
   const LabelMessage({required this.imageAssetPath, required this.message});
 
   @override
