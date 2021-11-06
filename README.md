@@ -4,9 +4,9 @@
 
 ## :notebook: Overview
 
-This project has the main objective of building a flutter application that uses a flutter clean  architecture and could serve as a template for building new applications. For the application of this project we used the [http.cats](https://http.cat/) website as a basis to create a mobile version with Flutter.
+This project has the main objective of building a Flutter application that uses a Clean Architecture and could serve as a template for building new applications. For the application of this project we used the [http.cats](https://http.cat/) website as a basis to create a mobile version with Flutter.
 
-You can see more about Flutter clean architecture: [ResoCoder](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course) and [Flutterando](https://github.com/Flutterando/Clean-Dart)
+You can see more about Flutter clean Architecture: [ResoCoder](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course) and [Flutterando](https://github.com/Flutterando/Clean-Dart)
 
 ## :pushpin: Goals  
 > - Facilitate rapid development of mobile solutions in Flutter    
