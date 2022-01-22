@@ -9,8 +9,6 @@ ThemeData themeData = ThemeData(
   appBarTheme: AppBarTheme(color: ColorTheme.PRIMARY_COLOR),
   fontFamily: "Nunito",
   textTheme: TextTheme(
-    headline:
-    TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
     button: TextStyle(
         color: Colors.white, fontWeight: FontWeight.w600, fontSize: FontSize.FONT_SIZE_REGULAR),
   ),
